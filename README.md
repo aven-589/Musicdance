@@ -1,6 +1,8 @@
 # MusicDance
 
 Windows 全屏音乐可视化。监听电脑输出的音频，实时生成 3D 粒子动画。
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/2a8f08ee-9d2e-4b4c-92fc-60ae5e0c2c0d" />
+
 
 ## 快速使用
 
