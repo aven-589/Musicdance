@@ -1,0 +1,62 @@
+{
+  "name": "music-dance",
+  "version": "1.0.0",
+  "description": "Windows 全屏音乐可视化应用",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "webpack --mode production",
+    "build": "npm run build:main && npm run build:renderer",
+    "start": "npm run build && electron .",
+    "dev": "npm run build:main && webpack --mode development && electron .",
+    "pack": "npm run build && electron-builder --win",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.musicdance.app",
+    "productName": "MusicDance",
+    "directories": {
+      "output": "release"
+    },
+    "electronDist": "node_modules/electron/dist",
+    "files": [
+      "dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "audio-capture",
+        "to": "audio-capture"
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "MusicDance.exe"
+    },
+    "nodeGypRebuild": false
+  },
+  "keywords": [
+    "music-visualizer",
+    "electron",
+    "threejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fft.js": "^4.0.4",
+    "three": "^0.184.0",
+    "wasapi-audio-capture": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/three": "^0.184.1",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.0.0",
+    "html-webpack-plugin": "^5.6.7",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+[AudioCapture] Constructed
+start() called, exePath=D:\music-visualizer\audio-capture\capture.exe exists=true
+spawned, pid=7068
+Handler setup complete
+stdout data: 3840 bytes (total=3840)
+stdout data: 3840 bytes (total=7680)
